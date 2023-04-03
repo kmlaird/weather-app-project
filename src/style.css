@@ -10,15 +10,29 @@ body {
 .weather {
   padding: 40px;
   border-radius: 20px;
-  background-color: rgba(239, 239, 239, 0.7);
+  background-color: rgba(237, 237, 237, 0.7);
   box-shadow: 0 20px 50px rgba(65, 50, 100, 0.08);
 }
 
+/*search styling*/
+.btn-primary {
+  background-color: rgb(56, 81, 112);
+  border: 1px solid rgb(56, 81, 112);
+}
+
+.btn-primary:hover {
+  background-color: rgb(20, 45, 76);
+  border: 1px solid rgb(20, 45, 76);
+}
+.btn-light {
+  background-color: rgb(237, 237, 237);
+  border: 1px solid rgb(237, 237, 237);
+}
 /*current weather block*/
 .current-weather {
-  border: 4px outset rgb(176, 170, 180);
+  border: 4px outset rgb(159, 211, 199);
   border-radius: 20px;
-  background-color: rgba(176, 170, 180, 0.7);
+  background-color: rgb(237, 237, 237);
   padding: 5px 5px;
   margin: 10px;
 }
@@ -27,10 +41,15 @@ li {
 }
 /*forecast*/
 .col {
-  border: 4px outset rgb(176, 170, 180);
+  border: 4px outset rgb(159, 211, 199);
   border-radius: 20px;
-  background-color: rgba(176, 170, 180, 0.7);
+  background-color: rgb(237, 237, 237);
   padding: 5px 5px;
   margin: 10px;
   text-align: center;
+}
+
+/*footer*/
+a {
+  color: rgb(56, 81, 112);
 }
