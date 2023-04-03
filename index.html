@@ -41,26 +41,24 @@
         <div class="current-weather">
           <div class="row">
             <div class="col-6">
-              <h1>City</h1>
-              <ul>
-                <li>Last Updated: weekday | time</li>
-                <li>
-                  High Temp: <span class="temp">8</span
-                  ><span class="units">°C</span>, Low Temp:
-                  <span class="temp">0</span><span class="units">°C</span>
-                </li>
-                <li>Humidity: 69% | Wind Speed: 5mph SE</li>
-                <li>Sunrise: 07:30 | Sunset: 19:30</li>
-              </ul>
+              <h4>City</h4>
+              <canvas width="52" height="52"></canvas>
+              <span class="temp-today">
+              <span class="temperature" id="today-temp">3</span>
+              <span class="unit">
+                  °C
+              </span>
+            <br />
+              Feels like <span class="feels-like">1</span>°C
             </div>
-            <div class="col-6 col-md-6 col-sm-8">
-              <div class="temperature-container d-flex justify-content-end">
-                <canvas width="52" height="52"></canvas>
-                <div>
-                  <span class="temperature">3</span>
-                  <span class="unit">°C </span>
-                </div>
-              </div>
+            <div class="col-6">
+              <ul>
+                <li><strong>Temp range:</strong> <span class="forecast-temp-max">8°</span> | <span class="forecast-temp-min">0°</span></li>
+                <li><strong>Humidity:</strong>69%</li>
+                <li><strong>Wind Speed:</strong> 5mph SE</li>
+                <li><strong>Sunrise:</strong> 07:30</li>
+                <li><strong>Sunset:</strong> 19:30</li>
+              </ul>
             </div>
           </div>
         </div>
