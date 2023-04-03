@@ -15,6 +15,113 @@
     <title>Your Weather Forecast</title>
   </head>
   <body>
+    <div class="container">
+      <form>
+        <div class="row">
+          <div class="col-8">
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              class="form-control search-input"
+            />
+          </div>
+          <div class="col-3 p-0">
+            <input type="submit" class="btn btn-primary w-100" value="Search" />
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-light">🌎 📍</button>
+          </div>
+        </div>
+      </form>
+      <div class="current-weather">
+        <div class="row">
+          <div class="col-6">
+            <h1>City</h1>
+            <ul>
+              <li>Last Updated: weekday | time</li>
+              <li>
+                High Temp: <span class="temp">8</span
+                ><span class="units">°C</span>, Low Temp:
+                <span class="temp">0</span><span class="units">°C</span>
+              </li>
+              <li>Humidity: 69% | Wind Speed: 5mph SE</li>
+              <li>Sunrise: 07:30 | Sunset: 19:30</li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-6 col-sm-8">
+            <div class="temperature-container d-flex justify-content-end">
+              <canvas width="52" height="52"></canvas>
+              <div>
+                <span class="temperature">3</span>
+                <span class="unit">°C </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forecast row">
+        <div class="col">
+          <div class="forecast-preview">
+            <div class="forecast-day">Mon</div>
+            <canvas width="38" height="38"></canvas>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max">8°</span>
+              <span class="forecast-temp-min">0°</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-preview">
+            <div class="forecast-day">Tues</div>
+            <canvas width="38" height="38"></canvas>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max">8°</span>
+              <span class="forecast-temp-min">0°</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-preview">
+            <div class="forecast-day">Wed</div>
+            <canvas width="38" height="38"></canvas>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max">8°</span>
+              <span class="forecast-temp-min">0°</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-preview">
+            <div class="forecast-day">Thurs</div>
+            <canvas width="38" height="38"></canvas>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max">8°</span>
+              <span class="forecast-temp-min">0°</span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-preview">
+            <div class="forecast-day">Fri</div>
+            <canvas width="38" height="38"></canvas>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max">8°</span>
+              <span class="forecast-temp-min">0°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      This project was coded by
+      <a href="https://www.shecodes.io/graduates/76830-kim-laird">Kim Laird</a>
+      and is
+      <a href="https://github.com/kmlaird/weather-app-project.git"
+        >open-sourced on GitHub</a
+      >
+      and hosted on
+      <a href="https://harmonious-cuchufli-cf7a9f.netlify.app/">Netlify</a>.
+    </footer>
     <script src-="src/script.js"></script>
   </body>
 </html>
