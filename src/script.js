@@ -69,10 +69,10 @@ function currentWeather(response) {
   let tempElement = document.querySelector(`#today-temp`);
   let tempMaxElement = document.querySelector(`#temp-max`);
   let tempMinElement = document.querySelector(`#temp-min`);
+  let descElement = document.querySelector(`#description`);
   let cityElement = document.querySelector(`#city-country`);
   let humidityElement = document.querySelector(`#humidity`);
   let windElement = document.querySelector(`#wind`);
-  let gustElement = document.querySelector(`#gust`);
   let visibilityElement = document.querySelector(`#visibility`);
   let feelsElement = document.querySelector(`#feels-like`);
   let dateElement = document.querySelector(`#date-updated`);
@@ -81,10 +81,10 @@ function currentWeather(response) {
   tempElement.innerHTML = Math.round(response.data.main.temp);
   tempMaxElement.innerHTML = Math.round(response.data.main.temp_max);
   tempMinElement.innerHTML = Math.round(response.data.main.temp_min);
+  descElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  gustElement.innerHTML = Math.round(response.data.wind.gust);
   visibilityElement.innerHTML = response.data.visibility;
   feelsElement.innerHTML = Math.round(response.data.main.feels_like);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -108,5 +108,3 @@ function getCurrentLocation(event) {
 
 let localeButton = document.querySelector(".btn-light");
 localeButton.addEventListener(`click`, getCurrentLocation);
-
-search(`Portland`);

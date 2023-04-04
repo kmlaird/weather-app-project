@@ -2,7 +2,7 @@
 body {
   margin: 60px auto;
   padding: 10px;
-  background-image: url("../images/windy.webp");
+  background-image: url("../images/partly-cloudy-co.jpeg");
   color: rgb(20, 45, 76);
 }
 .container {
@@ -52,9 +52,9 @@ li {
   font-size: 45px;
   font-weight: 600;
 }
-#unit {
+.units {
   position: relative;
-  top: -10px;
+  top: -20px;
 }
 #temp-max {
   font-weight: 800;
