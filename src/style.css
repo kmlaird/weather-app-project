@@ -22,7 +22,9 @@ body {
   font-weight: 800;
   color: rgba(20, 45, 76, 0.7);
 }
-
+a:hover {
+  color: rgb(159, 211, 199);
+}
 /*search styling*/
 .btn-primary {
   background-color: rgb(56, 81, 112);
@@ -32,6 +34,10 @@ body {
 .btn-primary:hover {
   background-color: rgb(20, 45, 76);
   border: 1px solid rgb(20, 45, 76);
+}
+.btn-primary:active {
+  background-color: rgb(56, 81, 112);
+  border: 1px solid rgb(56, 81, 112);
 }
 .btn-light {
   background-color: rgb(237, 237, 237);
