@@ -11,13 +11,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Your Weather Forecast</title>
   </head>
   <body>
     <div class="container">
       <div class="weather">
-        <form>
+        <form id="city-form">
           <div class="row">
             <div class="col-8">
               <input
@@ -41,11 +41,11 @@
         <div class="current-weather">
           <div class="row">
             <div class="col-6">
-              <h2>City</h2>
+              <h2 id="city-country">City</h2>
               <p id="date-updated">Last Updated: Today</p>
               <br />
               <canvas width="38" height="38"></canvas>
-              <span class="temperature" id="today-temp">3</span>
+              <span id="today-temp">3</span>
               <span id="unit"> °C </span>
               <br />
               Feels like <span class="feels-like">1</span>°C
@@ -57,10 +57,18 @@
                   <span class="forecast-temp-max">8°</span> |
                   <span class="forecast-temp-min">0°</span>
                 </li>
-                <li><strong>Humidity:</strong> 69%</li>
-                <li><strong>Wind Speed:</strong> 5mph SE</li>
-                <li><strong>Sunrise:</strong> 07:30</li>
-                <li><strong>Sunset:</strong> 19:30</li>
+                <li>
+                  <strong>Humidity:</strong><span class="humidity">69</span>%
+                </li>
+                <li>
+                  <strong>Wind Speed:</strong><span class="wind">5</span> mph
+                </li>
+                <li>
+                  <strong>Sunrise:</strong><span class="sunrise">07:30</span>
+                </li>
+                <li>
+                  <strong>Sunset:</strong><span class="sunset">19:30</span>
+                </li>
               </ul>
             </div>
           </div>
