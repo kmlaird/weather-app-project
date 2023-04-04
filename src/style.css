@@ -43,6 +43,17 @@ a:hover {
   background-color: rgb(237, 237, 237);
   border: 1px solid rgb(237, 237, 237);
 }
+/*unit conversion*/
+.units .active {
+  color: rgb(20, 45, 76);
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
 /*current weather block*/
 .current-weather {
   border: 4px outset rgb(159, 211, 199);

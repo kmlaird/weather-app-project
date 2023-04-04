@@ -78,6 +78,8 @@ function currentWeather(response) {
   let dateElement = document.querySelector(`#date-updated`);
   let iconElement = document.querySelector(`#icon`);
 
+  celsiusTemperature = response.data.main.temp;
+
   tempElement.innerHTML = Math.round(response.data.main.temp);
   tempMaxElement.innerHTML = Math.round(response.data.main.temp_max);
   tempMinElement.innerHTML = Math.round(response.data.main.temp_min);
@@ -106,5 +108,36 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let localeButton = document.querySelector(".btn-light");
+//Unit Conversion
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(`#today-temp`);
+
+  celsiusLink.classList.remove(`active`);
+  fahrenheitLink.classList.add(`active`);
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(`#today-temp`);
+
+  celsiusLink.classList.add(`active`);
+  fahrenheitLink.classList.remove(`active`);
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+//global variables
+let celsiusTemperature = null;
+
+let localeButton = document.querySelector(`.btn-light`);
 localeButton.addEventListener(`click`, getCurrentLocation);
+
+let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener(`click`, displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector(`#celsius-link`);
+celsiusLink.addEventListener(`click`, displayCelsiusTemperature);
+
+searchCity(`Portland`);
