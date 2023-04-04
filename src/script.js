@@ -84,7 +84,7 @@ function currentWeather(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   gustElement.innerHTML = Math.round(response.data.wind.gust);
-  visibilityElement = response.data.visibility;
+  visibilityElement.innerHTML = response.data.visibility;
   feelsElement.innerHTML = Math.round(response.data.main.feels_like);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
