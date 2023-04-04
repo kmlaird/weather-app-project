@@ -1,8 +1,9 @@
-/*Outer containers*/
+/*containers*/
 body {
   margin: 60px auto;
   padding: 10px;
   background-image: url("../images/windy.webp");
+  color: rgb(20, 45, 76);
 }
 .container {
   max-width: 800px;
@@ -12,6 +13,14 @@ body {
   border-radius: 20px;
   background-color: rgba(237, 237, 237, 0.7);
   box-shadow: 0 20px 50px rgba(65, 50, 100, 0.08);
+}
+.forecast-temp-max {
+  font-weight: 800;
+}
+
+.forecast-temp-min {
+  font-weight: 800;
+  color: rgba(20, 45, 76, 0.7);
 }
 
 /*search styling*/
@@ -38,6 +47,13 @@ body {
 }
 li {
   list-style: none;
+}
+#today-temp {
+  font-size: 30px;
+}
+#unit {
+  position: relative;
+  top: -10px;
 }
 /*forecast*/
 .col {
