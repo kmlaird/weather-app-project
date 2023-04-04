@@ -2,7 +2,12 @@
 body {
   margin: 60px auto;
   padding: 10px;
-  background-image: url("../images/partly-cloudy-co.jpeg");
+  background: linear-gradient(
+    to bottom,
+    rgb(70, 124, 164) 0%,
+    rgb(200, 210, 222) 70%,
+    rgb(70, 124, 164) 100%
+  );
   color: rgb(20, 45, 76);
 }
 .container {
