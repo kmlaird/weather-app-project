@@ -37,7 +37,7 @@ function formatDate(timestamp) {
   let month = months[now.getMonth()];
   let date = now.getDate();
 
-  return `${day}, ${month} ${date} at ${hour}:${minute}`;
+  return `${day}, ${month} ${date} at ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -62,7 +62,7 @@ function showPosition(position) {
 
   let apiKey = `de78cc20aef9bef799c814cc01fdc85f`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(currentTemp);
+  axios.get(apiUrl).then(currentWeather);
 }
 
 function currentWeather(response) {
@@ -76,6 +76,7 @@ function currentWeather(response) {
   let visibilityElement = document.querySelector(`#visibility`);
   let feelsElement = document.querySelector(`#feels-like`);
   let dateElement = document.querySelector(`#date-updated`);
+  let iconElement = document.querySelector(`#icon`);
 
   tempElement.innerHTML = Math.round(response.data.main.temp);
   tempMaxElement.innerHTML = Math.round(response.data.main.temp_max);
@@ -87,6 +88,11 @@ function currentWeather(response) {
   visibilityElement.innerHTML = response.data.visibility;
   feelsElement.innerHTML = Math.round(response.data.main.feels_like);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    `src`,
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute(`alt`, response.data.weather[0].description);
 }
 
 function searchCity(city) {
@@ -102,3 +108,5 @@ function getCurrentLocation(event) {
 
 let localeButton = document.querySelector(".btn-light");
 localeButton.addEventListener(`click`, getCurrentLocation);
+
+search(`Portland`);
