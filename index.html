@@ -43,32 +43,23 @@
             <div class="col-6">
               <h2 id="city-country">City</h2>
               <p id="date-updated">Last Updated: Today</p>
-              <br />
-              <canvas width="38" height="38"></canvas>
+              <img src="" alt="Clear" id="icon" class="float-left" />
               <span id="today-temp">3</span>
               <span id="unit"> °C </span>
               <br />
-              Feels like <span class="feels-like">1</span>°C
+              Feels like <span id="feels-like">1</span>°C
             </div>
             <div class="col-6">
               <ul>
                 <li>
-                  <strong>Temp range:</strong>
-                  <span class="forecast-temp-max">8°</span> |
-                  <span class="forecast-temp-min">0°</span>
+                  Temp range:
+                  <span id="temp-max">8°</span> |
+                  <span id="temp-min">0°</span>
                 </li>
-                <li>
-                  <strong>Humidity:</strong><span class="humidity">69</span>%
-                </li>
-                <li>
-                  <strong>Wind Speed:</strong><span class="wind">5</span> mph
-                </li>
-                <li>
-                  <strong>Sunrise:</strong><span class="sunrise">07:30</span>
-                </li>
-                <li>
-                  <strong>Sunset:</strong><span class="sunset">19:30</span>
-                </li>
+                <li>Humidity: <span id="humidity">69</span>%</li>
+                <li>Wind Speed: <span id="wind">5</span> m/s</li>
+                <li>Wind Gusts: <span id="gust">10</span> m/s</li>
+                <li>Visibility: <span id="visibility">10</span> km</li>
               </ul>
             </div>
           </div>

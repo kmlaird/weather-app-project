@@ -55,6 +55,14 @@ li {
   position: relative;
   top: -10px;
 }
+#temp-max {
+  font-weight: 800;
+}
+
+#temp-min {
+  font-weight: 800;
+  color: rgba(20, 45, 76, 0.7);
+}
 /*forecast*/
 .col {
   border: 4px outset rgb(159, 211, 199);
