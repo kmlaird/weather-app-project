@@ -62,7 +62,7 @@ function showPosition(position) {
   let lat = position.coords.latitude;
 
   let apiKey = `1ead678f41o54t591700c72f3b42035b`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&units=metric&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&units=imperial&key=${apiKey}`;
   axios.get(apiUrl).then(currentWeather);
 }
 
@@ -76,7 +76,7 @@ function currentWeather(response) {
   let dateElement = document.querySelector(`#date-updated`);
   let iconElement = document.querySelector(`#icon`);
 
-  celsiusTemperature = response.data.temperature.current;
+  fahrenheitTemperature = response.data.temperature.current;
 
   tempElement.innerHTML = Math.round(response.data.temperature.current);
   descElement.innerHTML = response.data.condition.description;
@@ -96,7 +96,7 @@ function currentWeather(response) {
 
 function searchCity(city) {
   let apiKey = `1ead678f41o54t591700c72f3b42035b`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&units=metric&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&units=imperial&key=${apiKey}`;
   axios.get(apiUrl).then(currentWeather);
 }
 
@@ -112,7 +112,6 @@ function displayFahrenheitTemperature(event) {
 
   celsiusLink.classList.remove(`active`);
   fahrenheitLink.classList.add(`active`);
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
@@ -122,10 +121,11 @@ function displayCelsiusTemperature(event) {
 
   celsiusLink.classList.add(`active`);
   fahrenheitLink.classList.remove(`active`);
+  let celsiusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
   tempElement.innerHTML = Math.round(celsiusTemperature);
 }
-//forecast
 
+//forecast
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
@@ -161,13 +161,13 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = `1ead678f41o54t591700c72f3b42035b`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 //global variables
-let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
 let localeButton = document.querySelector(`.btn-light`);
 localeButton.addEventListener(`click`, getCurrentLocation);
