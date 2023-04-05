@@ -127,9 +127,41 @@ function displayCelsiusTemperature(event) {
   fahrenheitLink.classList.remove(`active`);
   tempElement.innerHTML = Math.round(celsiusTemperature);
 }
+//forecast
+
+function displayForecast() {
+  let days = [`Mon`, `Tues`, `Wed`];
+  let forecastElement = document.querySelector(`#forecast`);
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col">
+        <div class="forecast-preview">
+          <div class="forecast-day">Tues</div>
+          <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" height="50"/>
+          <div class="forecast-temp">
+            <span class="forecast-temp-max">8°</span> |
+            <span class="forecast-temp-min">0°</span>
+          </div>
+        </div>
+      </div>
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = `de78cc20aef9bef799c814cc01fdc85f`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //global variables
 let celsiusTemperature = null;
+displayForecast();
 
 let localeButton = document.querySelector(`.btn-light`);
 localeButton.addEventListener(`click`, getCurrentLocation);
