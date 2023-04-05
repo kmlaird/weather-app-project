@@ -57,8 +57,9 @@ let cityForm = document.querySelector(`#city-form`);
 cityForm.addEventListener(`submit`, search);
 
 function showPosition(position) {
-  let lon = position.coordinates.longitude;
-  let lat = position.coordinates.latitude;
+  console.log(position.coords);
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
 
   let apiKey = `1ead678f41o54t591700c72f3b42035b`;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&units=metric&key=${apiKey}`;
